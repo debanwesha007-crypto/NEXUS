@@ -1,5 +1,9 @@
 # NEXUS — Local RAG Chatbot
+> Neural Extraction & Unified Search
 
+A full-stack document intelligence and RAG application.
+
+**🚀 [Live Demo](https://nexus-frontend-ejpo.onrender.com/)**
 ## Requirements
 - Python 3.10+
 - Node.js 18+
