@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import './style.css';
 
-const API='http://localhost:8000';
+const API='https://nexus-776h.onrender.com';
 function App(){
  const [files,setFiles]=useState([]),[question,setQuestion]=useState(''),[answer,setAnswer]=useState(''),[sources,setSources]=useState([]),[status,setStatus]=useState('System ready.'),[busy,setBusy]=useState(false);
  async function upload(){if(!files.length)return;setBusy(true);setStatus('Indexing documents...');const fd=new FormData();files.forEach(f=>fd.append('files',f));try{const r=await fetch(API+'/upload',{method:'POST',body:fd});const d=await r.json();setStatus(`Added ${d.added.length} file(s), skipped ${d.skipped.length}, errors ${d.errors.length}.`)}catch(e){setStatus('Backend unavailable. Start FastAPI first.')}finally{setBusy(false)}}
